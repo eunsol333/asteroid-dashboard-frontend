@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { DatePicker } from "@mui/x-date-pickers";
 
-export const StyledDatePicker = styled(DatePicker)(({ theme }) => ({
+export const StyledDatePicker = styled(DatePicker)(() => ({
   "& .MuiInputBase-root": {
     backgroundColor: "transparent",
     color: "white",

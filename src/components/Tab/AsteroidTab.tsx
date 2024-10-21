@@ -49,12 +49,13 @@ export default function AsteroidTab() {
 
   const fetchAsteroids = async () => {
     try {
+      const baseURL = import.meta.env.VITE_BASE_URL;
       setLoading(true);
 
       const startDateFormatted = dayjs(tabState.startDate).format("YYYY-MM-DD");
       const endDateFormatted = dayjs(tabState.endDate).format("YYYY-MM-DD");
       const response = await fetch(
-        `http://localhost:3000/asteroids?startDate=${startDateFormatted}&endDate=${endDateFormatted}&searchString=${tabState.searchString}`
+        `${baseURL}/asteroids?startDate=${startDateFormatted}&endDate=${endDateFormatted}&searchString=${tabState.searchString}`
       );
 
       if (!response.ok) {
